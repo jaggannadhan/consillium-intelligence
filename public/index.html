@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:700%7CMontserrat:400,500,600,700,900" rel="stylesheet">
+  <title>Consilium</title>
+  <!-- <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    /> -->
+</head>
+
+<body>
+  <!-- <noscript>You need to enable JavaScript to run this app.</noscript> -->
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/esm/popper.js"
+    ></script> -->
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+    crossorigin="anonymous"></script>
+  <!-- DataTables -->
+  <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="https://cdn.kik.com/app/2.0.1/app.min.js"></script>
+  <!-- <script type="text/javascript">
+    $(function () {
+      $("#datatable1, #datatable2, #datatable3").DataTable({
+        paging: true,
+        lengthChange: false,
+        searching: false,
+        ordering: true,
+        info: true,
+        autoWidth: true
+      });
+    });
+  </script>
+  bootstrap datepicker
+  <script type="text/javascript">
+    $(function () {
+      //Date picker
+      $(
+        "#datepicker1, #datepicker2, #datepicker3, #datepicker4, #datepicker5, #datepicker6"
+      ).datepicker({
+        autoclose: true,
+        format: "dd/mm/yyyy"
+      });
+    });
+  </script> -->
+  <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+  <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+  <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+  <script src="https://code.highcharts.com/mapdata/custom/world-continents.js"></script>
+
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js"></script>
+  <!-- <script type="text/javascript">
+    $(document).ready(function () {
+      $("#multi-select1").multiselect();
+    });
+  </script> -->
+  <!-- <script>
+    function bs_input_file() {
+      $(".input-file").before(function () {
+        if (
+          !$(this)
+            .prev()
+            .hasClass("input-ghost")
+        ) {
+          var element = $(
+            "<input type='file' class='input-ghost' style='visibility:hidden; height:0'>"
+          );
+          element.attr("name", $(this).attr("name"));
+          element.change(function () {
+            element
+              .next(element)
+              .find("input")
+              .val(
+                element
+                  .val()
+                  .split("\\")
+                  .pop()
+              );
+          });
+          $(this)
+            .find("button.btn-choose")
+            .click(function () {
+              element.click();
+            });
+          $(this)
+            .find("button.btn-reset")
+            .click(function () {
+              element.val(null);
+              $(this)
+                .parents(".input-file")
+                .find("input")
+                .val("");
+            });
+          $(this)
+            .find("input")
+            .css("cursor", "pointer");
+          $(this)
+            .find("input")
+            .mousedown(function () {
+              $(this)
+                .parents(".input-file")
+                .prev()
+                .click();
+              return false;
+            });
+          return element;
+        }
+      });
+    }
+    $(function () {
+      bs_input_file();
+    });
+  </script> -->
+
+  <!-- bootstrap datepicker -->
+  <!-- <script type="text/javascript">
+    $(function () {
+      //Date picker
+      $(
+        "#datepicker1, #datepicker2, #datepicker3, #datepicker4, #datepicker5, #datepicker6"
+      ).datepicker({
+        autoclose: true,
+        format: "dd/mm/yyyy"
+      });
+    });
+  </script> -->
+  <!-- <script>
+    var dragSrcEl = null;
+
+    function handleDragStart(e) {
+      // Target (this) element is the source node.
+      dragSrcEl = this;
+
+      e.dataTransfer.effectAllowed = "move";
+      e.dataTransfer.setData("text/html", this.outerHTML);
+
+      this.classList.add("dragElem");
+    }
+
+    function handleDragOver(e) {
+      if (e.preventDefault) {
+        e.preventDefault(); // Necessary. Allows us to drop.
+      }
+      this.classList.add("over");
+
+      e.dataTransfer.dropEffect = "move"; // See the section on the DataTransfer object.
+
+      return false;
+    }
+
+    function handleDragEnter(e) {
+      // this / e.target is the current hover target.
+    }
+
+    function handleDragLeave(e) {
+      this.classList.remove("over"); // this / e.target is previous target element.
+    }
+
+    function handleDrop(e) {
+      // this/e.target is current target element.
+
+      if (e.stopPropagation) {
+        e.stopPropagation(); // Stops some browsers from redirecting.
+      }
+
+      // Don't do anything if dropping the same column we're dragging.
+      if (dragSrcEl != this) {
+        // Set the source column's HTML to the HTML of the column we dropped on.
+        //alert(this.outerHTML);
+        //dragSrcEl.innerHTML = this.innerHTML;
+        //this.innerHTML = e.dataTransfer.getData('text/html');
+        this.parentNode.removeChild(dragSrcEl);
+        var dropHTML = e.dataTransfer.getData("text/html");
+        this.insertAdjacentHTML("beforebegin", dropHTML);
+        var dropElem = this.previousSibling;
+        addDnDHandlers(dropElem);
+      }
+      this.classList.remove("over");
+      return false;
+    }
+
+    function handleDragEnd(e) {
+      // this/e.target is the source node.
+      this.classList.remove("over");
+
+      /*[].forEach.call(cols, function (col) {
+      col.classList.remove('over');
+    });*/
+    }
+
+    function addDnDHandlers(elem) {
+      elem.addEventListener("dragstart", handleDragStart, false);
+      elem.addEventListener("dragenter", handleDragEnter, false);
+      elem.addEventListener("dragover", handleDragOver, false);
+      elem.addEventListener("dragleave", handleDragLeave, false);
+      elem.addEventListener("drop", handleDrop, false);
+      elem.addEventListener("dragend", handleDragEnd, false);
+    }
+
+    var cols = document.querySelectorAll("#columns .column");
+    [].forEach.call(cols, addDnDHandlers);
+  </script>
+  <script>
+    var $container = $(".task-container");
+    var $task = $(".todo-task");
+
+    $task.draggable({
+      addClasses: false,
+      connectToSortable: ".task-container"
+    });
+
+    $container.droppable({
+      accept: ".todo-task"
+    });
+
+    $(".ui-droppable")
+      .sortable({
+        placeholder: "ui-state-highlight",
+        opacity: 0.5,
+        helper: "original",
+        beforeStop: function (event, ui) {
+          newItem = ui.item;
+        },
+        receive: function (event, ui) { }
+      })
+      .disableSelection()
+      .droppable({
+        over: ".ui-droppable",
+        activeClass: "highlight",
+        drop: function (event, ui) {
+          $(this).addClass("ui-state-highlight");
+        }
+      });
+
+    $(function () {
+      var hash = window.location.hash;
+      hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+
+      $('.nav-tabs a').click(function (e) {
+        $(this).tab('show');
+        var scrollmem = $('body').scrollTop();
+        window.location.hash = this.hash;
+        $('html,body').scrollTop(scrollmem);
+      });
+    });
+    
+  </script> -->
+  <!-- <script type="text/javascript">
+    $(document).ready(
+    function () {
+    $("#for_pass").click(function () {
+    $("#for_pas1").show("slow");
+    $("#mem_log").hide("slow");
+    });
+    $("#cancel").click(function () {
+    $("#mem_log").show("slow");
+    $("#for_pas1").hide("slow");
+    });
+    });
+</script> -->
+</body>
+
+</html>
